@@ -2,7 +2,6 @@
   <img src="https://github.com/davezant/mediato.cloud/blob/cac07ab5d56403053dd911b062b99d53bf32a595/meditologo.png" width="260" alt="mediato logo">
 </p>
 
-<h2 align="center">📦 Mediato</h2>
 <h4 align="center">Extract media from social media posts — open source, simple, fast.</h4>
 
 <p align="center">
@@ -48,8 +47,18 @@ Paste a social media post link → receive direct media file
 
 ## 🛠 Installation (Developer Mode)
 
-### 1️⃣ Clone the project
+### 1. Clone the project
 ```bash
 git clone https://github.com/davezant/mediato.cloud/
+```
+
+### 2. Open folder and run install.py
+```bash
 cd mediato.cloud
-python3 install.p
+python3 install.py
+```
+
+### 3.Run the webserver
+```bash
+python3 app.py
+```
