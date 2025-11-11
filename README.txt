@@ -17,6 +17,7 @@ The goal is to provide a simple, free, and trusted tool that helps users extract
 • Threads — in progress
 • Some posts with protected or private content cannot be processed
 • Pages using heavy dynamic obfuscation require better fallback logic
+• You need to edit the original yt-dlp-proxy to access better and make it go it way, but i don't remember how
 
 🚧 What needs improvement
 -------------------------
