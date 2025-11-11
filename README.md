@@ -39,12 +39,13 @@ Mediato is an **open-source social media media extractor**.
 | ✅ Threads    | WIP    | WIP    | ❌           | Needs contributors                     |
 
 
----
+
 
 ## 🚀 Live Demo
 
 🔗 https://mediato.cloud or https://mediato.squareweb.app/
 Paste a social media post link → receive direct media file
+<br>
 
 ---
 
