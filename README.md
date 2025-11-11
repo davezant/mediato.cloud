@@ -22,7 +22,10 @@ Mediato is an **open-source social media media extractor**.
 ✅ Easy to deploy, extend and improve  
 ✅ Perfect for education, personal use, collecting memes, etc.
 
----
+
+<p align="center">
+  <img src="https://github.com/davezant/mediato.cloud/blob/190a59091e8285afd041731b4d108af530dda170/HowItWorks.gif" width="400">
+</p>
 
 ## ✨ Features
 | Platform       | Images | Video | Multi-media   | Notes                                  |
