@@ -8,7 +8,7 @@
   <a href="https://mediato.cloud"><b>Visit Website</b></a> •
   <a href="#-features">Features</a> •
   <a href="#-installation">Installation</a> •
-  <a href="#-contributing">Contributing</a>
+  <a href="#-contributing">Contributing</a> 
 </p>
 
 ---
@@ -65,3 +65,27 @@ python3 install.py
 ```bash
 python3 app.py
 ```
+---
+
+---
+
+## 🤝 Contributing
+
+Mediato is open-source and open to new features, bug fixes, improvements and ideas.
+
+✅ Add new platforms  
+✅ Improve scrapers  
+✅ Better front-end  
+✅ API improvements  
+✅ Documentation fixes
+
+### How to contribute
+1. Fork this repository
+2. Create a new branch: `feature/my-feature`
+3. Commit and push
+4. Open a Pull Request
+
+Found a bug? Open an Issue.
+Have ideas? Create a Discussion.
+
+If you want to help with **Facebook** or **Threads**, you are extra welcome ❤️
