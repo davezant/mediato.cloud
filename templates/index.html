@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MediaTo - Scrap the media out of social media posts!</title>
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="description" content="Looking for a fast, fun, personal way to save your favorite social media content? Mediato is your private social media scraper for downloading videos, images, and posts from Instagram, Facebook, TikTok, and more. Perfect for personal use, meme hoarding, or keeping content for offline viewing. Simple, secure, and totally for your own entertainment." />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+      :root{
+        --bg:#fafafa;
+        --card-bg:#ffffff;
+        --muted:#6b7280;
+        --shadow: 0 14px 30px rgba(15,23,42,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+      }
+      html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+      body{
+        background:var(--bg);
+        color:#111827;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        min-height:100vh;
+      }
+
+      /* central column */
+      .wrap{
+        width:100%;
+        max-width:980px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        padding:5vh 20px 6vh;
+      }
+
+      .logo{
+        margin-top:3vh;
+        margin-bottom:1.25rem;
+        width:260px;
+        height:auto;
+        display:block;
+      }
+
+      /* card */
+      .card{
+        width:720px;
+        max-width:92%;
+        background:var(--card-bg);
+        border-radius:28px;
+        box-shadow:var(--shadow);
+        padding:20px;
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+        align-items:stretch;
+      }
+
+      .input-row{
+        display:flex;
+        gap:12px;
+        align-items:center;
+        width:100%;
+      }
+
+      .input-row input{
+        flex:1;
+        height:56px;
+        border-radius:12px;
+        border:1px solid #e6e6e6;
+        padding:0 14px;
+        font-size:15px;
+        background:transparent;
+        outline:none;
+        box-sizing:border-box;
+        color:#111827;
+      }
+
+      .input-row input::placeholder{ color:#111827; opacity:0.6; }
+
+      .btn{
+        min-width:120px;
+        height:44px;
+        border-radius:10px;
+        background:#000;
+        color:#fff;
+        border:none;
+        padding:0 16px;
+        font-weight:600;
+        cursor:pointer;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      }
+
+      .muted{
+        font-size:13px;
+        color:var(--muted);
+        font-style:italic;
+        padding-left:4px;
+      }
+
+      /* result area */
+      .result{
+        margin-top:6px;
+        width:100%;
+      }
+
+      .alert{
+        margin-top:8px;
+        padding:10px 12px;
+        border-radius:8px;
+        border:1px solid #fca5a5;
+        background:#fff7f7;
+        color:#9b1c1c;
+        font-size:14px;
+      }
+
+      .media-wrap img, .media-wrap video{
+        width:100%;
+        border-radius:12px;
+        border:1px solid #eee;
+        display:block;
+      }
+
+      /* footer */
+      footer{
+        margin-top:30px;
+        margin-bottom:8px;
+        font-size:12px;
+        color:#9ca3af;
+        text-align:center;
+      }
+
+      footer a{ color:inherit; text-decoration:underline; margin:0 6px; }
+
+      /* responsive tweaks */
+      @media (max-width:480px){
+        .card{ padding:14px; border-radius:18px; }
+        .input-row input{ height:48px; font-size:14px; }
+        .btn{ min-width:96px; height:40px; }
+        .logo{ width:220px; }
+      }
+    </style>
+
+    <script>
+      function testingWebsite(){
+        // apenas placeholder — subsitua se necessário
+        // alert("Alguns recursos estão indisponíveis no ambiente de teste.");
+        return true;
+      }
+      function clipboardHyperlink(url){
+    if(url[0] != "h"){
+        url = "https://mediato.cloud" + url;
+    }
+    const text = `:paperclip: [**Embed File**](${url})`;
+    navigator.clipboard.writeText(text)
+        .then(() => alert("Link copiado!"))
+        .catch(e => alert("Erro: " + e));
+}
+
+    </script>
+  </head>
+  <body class="h-screen w-screen">
+    <div class="wrap">
+      <!-- Logo (troque o src pelo seu) -->
+      <img class="logo" src="static/svg/logo.svg" alt="mediato logo" />
+
+      <!-- Card central -->
+      <div class="card" role="region" aria-label="scrap media">
+        <form method="get" action="/" onsubmit="return testingWebsite();" style="display:flex;flex-direction:column;gap:12px;">
+          <div class="input-row">
+            <i class="ri-links-line"></i>
+            <input name="url" type="text" placeholder="What post you found funny?" value="{{ media_url or '' }}" autocomplete="off" />
+            <button class="btn" type="submit">Scrap media</button>
+          </div>
+
+          <div class="muted">Just public media is supported*</div>
+        </form>
+	<div class="flex space-x-4 text-2xl text-gray-700">
+	<i class="ri-instagram-line"></i>
+	<i class="ri-youtube-line"></i>	
+	<i class="ri-tiktok-fill"></i>
+	<i class="ri-facebook-fill"></i>
+	<i class="ri-vimeo-fill"></i>
+	<i class="ri-threads-line"></i>
+	<i class="ri-twitter-x-fill"></i>
+	</div>
+        <!-- resultado / erro (Jinja) -->
+        <div class="result" style="text-align: -webkit-center;">
+          {% if error %}
+          <div class="alert">⚠️ {{ error }}</div>
+          {% endif %} {% if media %}
+          <div class="media-wrap mt-2">
+            <p style="color:#16a34a;font-weight:600;margin:6px 0;">✅ Media Found!</p>
+
+            {% if media.endswith('.mp4') %}
+            <video controls autoplay muted loop style="max-width: 500px; max-height: 280px; width: 100%; height: auto">
+              <source src="{{media | safe}}" type="video/mp4" />
+              Your browser does not support videos.
+            </video>
+            <a href="{{ media | safe}}" target="_blank" style="display:block;margin-top:8px;padding:8px 10px;background:#16a34a;color:#fff;text-align:center;border-radius:8px;text-decoration:none;font-weight:600;">Open Video</a>
+
+            {% elif media.endswith('.jpg') or media.endswith('.png') %}
+            <img src="{{ media | safe}}" alt="Extracted image" />
+
+            {% else %}
+ 	    <iframe src="{{ media }}" 
+             width="500" height="280" frameborder="0" 
+             allow="autoplay; muted; encrypted-media" allowfullscreen>
+            </iframe>
+            {% endif %}
+
+            <div style="text-align:center;margin-top:6px;">
+              <a href="{{ media | safe}}" target="_blank" style="color:#4f46e5;text-decoration:underline;">🔗 Open Media</a>
+              <div style="margin-top:8px;">
+                <button onclick="clipboardHyperlink('{{ media }}')" class="btn" style="background:#fff;color:#111;border:1px solid #e6e6e6;box-shadow:none;">Copy markdown link</button>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 mediato — Desenvolvido por
+      <a href="#">Deivid Santana do Nascimento</a> // Desenhado por <a href="https://www.behance.net/luminaio">Lúmina</a>
+    </footer>
+  </body>
+</html>

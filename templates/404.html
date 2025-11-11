@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>404 - Página não encontrada | MediaTo</title>
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="description" content="Página não encontrada" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <style>
+      :root{
+        --bg:#fafafa;
+        --card-bg:#ffffff;
+        --muted:#6b7280;
+        --shadow: 0 14px 30px rgba(15,23,42,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+      }
+      html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+      body{
+        background:var(--bg);
+        color:#111827;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        min-height:100vh;
+      }
+
+      .wrap{
+        width:100%;
+        max-width:980px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        padding:5vh 20px 6vh;
+      }
+
+      .logo{
+        margin-top:3vh;
+        margin-bottom:1.25rem;
+        width:260px;
+        height:auto;
+        display:block;
+      }
+
+      .card{
+        width:720px;
+        max-width:92%;
+        background:var(--card-bg);
+        border-radius:28px;
+        box-shadow:var(--shadow);
+        padding:30px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:16px;
+        text-align:center;
+      }
+
+      h1{
+        font-size:3rem;
+        margin:0;
+        color:#ef4444;
+      }
+
+      p{
+        font-size:1.1rem;
+        color:var(--muted);
+        max-width:480px;
+      }
+
+      a.btn{
+        min-width:140px;
+        height:44px;
+        border-radius:10px;
+        background:#000;
+        color:#fff;
+        border:none;
+        padding:0 16px;
+        font-weight:600;
+        cursor:pointer;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        text-decoration:none;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+      }
+
+      footer{
+        margin-top:30px;
+        margin-bottom:8px;
+        font-size:12px;
+        color:#9ca3af;
+        text-align:center;
+      }
+      footer a{ color:inherit; text-decoration:underline; margin:0 6px; }
+
+      @media (max-width:480px){
+        .card{ padding:18px; border-radius:18px; }
+        h1{ font-size:2.2rem; }
+        p{ font-size:1rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <img class="logo" src="/static/svg/logo.svg" alt="mediato logo" />
+
+      <div class="card">
+        <i class="ri-error-warning-line" style="font-size:3rem;color:#ef4444;"></i>
+        <h1>404</h1>
+        <p>Ops... a página que você está procurando não existe ou foi movida para outro lugar.</p>
+        <a href="/" class="btn">
+          <i class="ri-arrow-left-line" style="margin-right:6px;"></i>
+          Voltar ao início
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 mediato — Desenvolvido por
+      <a href="#">Deivid Santana do Nascimento</a> // Desenhado por <a href="#">Lúmina</a>
+    </footer>
+  </body>
+</html>

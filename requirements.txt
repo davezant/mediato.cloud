@@ -1,0 +1,14 @@
+discord-py
+flask
+flask[async]
+playwright
+yt_dlp
+ffmpeg
+facebook-scraper
+lxml[html_clean]
+nest_asyncio
+flask-sse
+pillow
+aiohttp
+yt-dlp-proxy
+moviepy
