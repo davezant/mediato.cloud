@@ -48,7 +48,7 @@ Paste a social media post link → receive direct media file
 
 ---
 
-## 🛠 Installation (Developer Mode)
+## 🛠 Installation
 
 ### 1. Clone the project
 ```bash
@@ -65,9 +65,9 @@ python3 install.py
 ```bash
 python3 app.py
 ```
----
 
 ---
+
 
 ## 🤝 Contributing
 
