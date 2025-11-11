@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/davezant/mediato.cloud/meditologo.png" width="260" alt="mediato logo">
+  <img src="https://github.com/davezant/mediato.cloud/blob/cac07ab5d56403053dd911b062b99d53bf32a595/meditologo.png" width="260" alt="mediato logo">
 </p>
 
 <h2 align="center">📦 Mediato</h2>
